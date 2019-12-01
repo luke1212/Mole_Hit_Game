@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android"
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
     android:oneshot="true">
+    <item
+        android:drawable="@drawable/img_sign_in_whack_mole_pit_0"
+        android:duration="10"/>
     <item
         android:drawable="@drawable/img_sign_in_whack_mole_rat_normal_18"
         android:duration="500"/>
-</selector>
+    <item
+        android:drawable="@drawable/img_sign_in_whack_mole_pit_0"
+        android:duration="10"/>
+</animation-list>
