@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/mole1"
+            android:layout_width="100dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/img_sign_in_whack_mole_rat_normal_18"
+            android:layout_height="100dp"/>
+        <ImageView
+            android:id="@+id/mole2"
+            android:layout_width="100dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/img_sign_in_whack_mole_rat_normal_18"
+            android:layout_height="100dp"/>
+        <ImageView
+            android:id="@+id/mole3"
+            android:layout_width="100dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/img_sign_in_whack_mole_rat_normal_18"
+            android:layout_height="100dp"/>
+        <ImageView
+            android:id="@+id/mole4"
+            android:layout_width="100dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/img_sign_in_whack_mole_rat_normal_18"
+            android:layout_height="100dp"
+            android:contentDescription="TODO" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button2"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="145dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="false"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginBottom="218dp"
+        android:text="Start"
+        android:translationX="145dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="139dp"
+        android:layout_height="50dp"
+        android:text="Time Left:" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="135dp"
+        android:layout_height="47dp"
+        android:layout_alignParentRight="true"
+        android:text="Score:" />
+
+
+</RelativeLayout>
