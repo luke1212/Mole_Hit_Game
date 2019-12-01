@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.AnimatedImageDrawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         random = new Random();
 
         button = (Button) findViewById(R.id.button);
+
         time_left = (TextView) findViewById(R.id.time_left);
         score = (TextView) findViewById(R.id.score);
 
@@ -73,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 button.setEnabled(false);
             }
         });
+
 
         mole1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -178,4 +181,5 @@ public class MainActivity extends AppCompatActivity {
             }
         },fps);
     }
+
 }
