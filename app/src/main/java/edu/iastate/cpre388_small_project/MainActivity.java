@@ -6,12 +6,14 @@ import androidx.core.content.ContextCompat;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.AnimatedImageDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,15 +28,21 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView mole1,mole2,mole3,mole4;
 
-    TextView time_left, score;
+    TextView time_left, score, tv_high_score;
 
-    Button button;
+    EditText editText;
 
-    int user_score = 0, fps = 1000, left = 5, tempifleft = 0;
+    Button button, save;
+
+    int user_score = 0, fps = 1000, left = 5, tempifleft = 0, high_score = 0;
 
     int which = 0, whichsave = 0;
 
-    AnimatedImageDrawable animatedImageDrawablel;
+    String highScoreUserInfo = "";
+
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String TEXT = "text";
+    public static final String INTEGER = "integer";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +52,13 @@ public class MainActivity extends AppCompatActivity {
         random = new Random();
 
         button = (Button) findViewById(R.id.button);
+        save  = (Button) findViewById(R.id.save);
+
+        editText = (EditText) findViewById(R.id.edit_text);
 
         time_left = (TextView) findViewById(R.id.time_left);
         score = (TextView) findViewById(R.id.score);
+        tv_high_score = (TextView) findViewById(R.id.highScore);
 
         mole1 = (ImageView) findViewById(R.id.mole1);
         mole2 = (ImageView) findViewById(R.id.mole2);
@@ -57,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
         mole2.setVisibility(View.INVISIBLE);
         mole3.setVisibility(View.INVISIBLE);
         mole4.setVisibility(View.INVISIBLE);
+        editText.setVisibility(View.INVISIBLE);
+        save.setVisibility(View.INVISIBLE);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +90,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                highScoreUserInfo = "High Score: " + editText.getText().toString() + high_score;
+                tv_high_score.setText(highScoreUserInfo);
+                saveData();
+            }
+        });
 
         mole1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,6 +142,9 @@ public class MainActivity extends AppCompatActivity {
                 mole4.setEnabled(false);
             }
         });
+
+        loadData();
+        updateViews();
     }
 
     private void startButton(){
@@ -174,6 +199,12 @@ public class MainActivity extends AppCompatActivity {
 
                 if(left==0){
                     Toast.makeText(MainActivity.this, "Game Over", Toast.LENGTH_SHORT).show();
+                    if(user_score > high_score){
+                        highScoreUserInfo = "";
+                        high_score = user_score;
+                        editText.setVisibility(View.VISIBLE);
+                        save.setVisibility(View.VISIBLE);
+                    }
                     button.setEnabled(true);
                 }else if (left > 0 ){
                     startButton();
@@ -182,4 +213,25 @@ public class MainActivity extends AppCompatActivity {
         },fps);
     }
 
+    public void saveData(){
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        SharedPreferences.Editor  editor = sharedPreferences.edit();
+
+        editor.putString(TEXT,highScoreUserInfo);
+        editor.putInt(INTEGER,high_score);
+        editor.apply();
+        Toast.makeText(this,"Data saved",Toast.LENGTH_SHORT).show();
+        editText.setVisibility(View.INVISIBLE);
+        save.setVisibility(View.INVISIBLE);
+    }
+
+    public void loadData(){
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        highScoreUserInfo = sharedPreferences.getString(TEXT,"") ;
+        high_score = sharedPreferences.getInt(INTEGER,0);
+    }
+
+    public void updateViews(){
+        tv_high_score.setText(highScoreUserInfo);
+    }
 }

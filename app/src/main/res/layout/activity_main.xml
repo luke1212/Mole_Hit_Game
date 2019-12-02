@@ -45,9 +45,7 @@
         android:layout_width="145dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerVertical="false"
-        android:layout_gravity="center_horizontal|center"
-        android:layout_marginBottom="218dp"
+        android:layout_gravity="center"
         android:text="Start"
         android:translationX="145dp" />
 
@@ -65,10 +63,28 @@
         android:text="Score:" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/highScore"
+        android:layout_width="133dp"
+        android:layout_height="39dp"
+        android:layout_below="@id/score"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="4dp"
+        android:text="Highest Score: " />
+
+    <EditText
+        android:id="@+id/edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/save"/>
+
+    <Button
+        android:id="@+id/save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
-
+        android:layout_gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Save"
+        android:layout_above="@+id/button"/>
 
 </RelativeLayout>
