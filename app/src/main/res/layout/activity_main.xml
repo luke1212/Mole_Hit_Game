@@ -16,25 +16,25 @@
             android:id="@+id/mole1"
             android:layout_width="100dp"
             android:scaleType="centerInside"
-            android:src="@drawable/img_sign_in_whack_mole_rat_normal_18"
+            android:src="@drawable/mole_move"
             android:layout_height="100dp"/>
         <ImageView
             android:id="@+id/mole2"
             android:layout_width="100dp"
             android:scaleType="centerInside"
-            android:src="@drawable/img_sign_in_whack_mole_rat_normal_18"
+            android:src="@drawable/mole_move"
             android:layout_height="100dp"/>
         <ImageView
             android:id="@+id/mole3"
             android:layout_width="100dp"
             android:scaleType="centerInside"
-            android:src="@drawable/img_sign_in_whack_mole_rat_normal_18"
+            android:src="@drawable/mole_move"
             android:layout_height="100dp"/>
         <ImageView
             android:id="@+id/mole4"
             android:layout_width="100dp"
             android:scaleType="centerInside"
-            android:src="@drawable/img_sign_in_whack_mole_rat_normal_18"
+            android:src="@drawable/mole_move"
             android:layout_height="100dp"
             android:contentDescription="TODO" />
     </LinearLayout>

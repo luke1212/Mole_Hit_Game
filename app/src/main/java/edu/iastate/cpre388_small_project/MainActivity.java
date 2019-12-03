@@ -65,10 +65,11 @@ public class MainActivity extends AppCompatActivity {
         mole3 = (ImageView) findViewById(R.id.mole3);
         mole4 = (ImageView) findViewById(R.id.mole4);
 
-        mole1.setVisibility(View.INVISIBLE);
-        mole2.setVisibility(View.INVISIBLE);
-        mole3.setVisibility(View.INVISIBLE);
-        mole4.setVisibility(View.INVISIBLE);
+        mole1.setImageResource(R.drawable.img_sign_in_whack_mole_pit_0);
+        mole2.setImageResource(R.drawable.img_sign_in_whack_mole_pit_0);
+        mole3.setImageResource(R.drawable.img_sign_in_whack_mole_pit_0);
+        mole4.setImageResource(R.drawable.img_sign_in_whack_mole_pit_0);
+
         editText.setVisibility(View.INVISIBLE);
         save.setVisibility(View.INVISIBLE);
 
@@ -157,21 +158,45 @@ public class MainActivity extends AppCompatActivity {
             case 1:
                 mole1.setImageResource( R.drawable.img_sign_in_whack_mole_rat_normal_18);
                 mole1.setVisibility(View.VISIBLE);
-                mole4.setEnabled(true);
+                mole2.setImageResource(R.drawable.img_sign_in_whack_mole_pit_0);
+                mole2.setVisibility(View.VISIBLE);
+                mole3.setImageResource(R.drawable.img_sign_in_whack_mole_pit_0);
+                mole3.setVisibility(View.VISIBLE);
+                mole4.setImageResource(R.drawable.img_sign_in_whack_mole_pit_0);
+                mole4.setVisibility(View.VISIBLE);
+                mole1.setEnabled(true);
                 break;
             case 2:
                 mole2.setImageResource( R.drawable.img_sign_in_whack_mole_rat_normal_18);
                 mole2.setVisibility(View.VISIBLE);
+                mole1.setImageResource(R.drawable.img_sign_in_whack_mole_pit_0);
+                mole1.setVisibility(View.VISIBLE);
+                mole3.setImageResource(R.drawable.img_sign_in_whack_mole_pit_0);
+                mole3.setVisibility(View.VISIBLE);
+                mole4.setImageResource(R.drawable.img_sign_in_whack_mole_pit_0);
+                mole4.setVisibility(View.VISIBLE);
                 mole2.setEnabled(true);
                 break;
             case 3:
                 mole3.setImageResource( R.drawable.img_sign_in_whack_mole_rat_normal_18);
                 mole3.setVisibility(View.VISIBLE);
+                mole1.setImageResource(R.drawable.img_sign_in_whack_mole_pit_0);
+                mole1.setVisibility(View.VISIBLE);
+                mole2.setImageResource(R.drawable.img_sign_in_whack_mole_pit_0);
+                mole2.setVisibility(View.VISIBLE);
+                mole4.setImageResource(R.drawable.img_sign_in_whack_mole_pit_0);
+                mole4.setVisibility(View.VISIBLE);
                 mole3.setEnabled(true);
                 break;
             case 4:
                 mole4.setImageResource( R.drawable.img_sign_in_whack_mole_rat_normal_18);
                 mole4.setVisibility(View.VISIBLE);
+                mole1.setImageResource(R.drawable.img_sign_in_whack_mole_pit_0);
+                mole1.setVisibility(View.VISIBLE);
+                mole3.setImageResource(R.drawable.img_sign_in_whack_mole_pit_0);
+                mole3.setVisibility(View.VISIBLE);
+                mole2.setImageResource(R.drawable.img_sign_in_whack_mole_pit_0);
+                mole2.setVisibility(View.VISIBLE);
                 mole4.setEnabled(true);
                 break;
         }
